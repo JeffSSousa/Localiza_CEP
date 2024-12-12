@@ -1,14 +1,20 @@
 package cep;
 
-import java.awt.EventQueue;
-
-import javax.swing.JDialog;
-import java.awt.Toolkit;
-import javax.swing.JLabel;
-import java.awt.SystemColor;
-import javax.swing.JButton;
 import java.awt.Cursor;
+import java.awt.Desktop;
+import java.awt.EventQueue;
+import java.awt.SystemColor;
+import java.awt.Toolkit;
+import java.net.URI;
+
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Sobre extends JDialog {
 
@@ -54,28 +60,58 @@ public class Sobre extends JDialog {
 		lblWebService.setBounds(50, 130, 83, 14);
 		getContentPane().add(lblWebService);
 		
-		JLabel lblNewLabel_1 = new JLabel("republicavirtual.com.br");
-		lblNewLabel_1.setForeground(SystemColor.textHighlight);
-		lblNewLabel_1.setBounds(158, 130, 171, 14);
-		getContentPane().add(lblNewLabel_1);
+		JLabel lblWebServ = new JLabel("republicavirtual.com.br");
+		lblWebServ.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				link("https://www.republicavirtual.com.br/");
+			}
+		});
+		lblWebServ.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblWebServ.setForeground(SystemColor.textHighlight);
+		lblWebServ.setBounds(158, 130, 171, 14);
+		getContentPane().add(lblWebServ);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setBackground(SystemColor.control);
-		btnNewButton.setToolTipText("Projeto");
-		btnNewButton.setIcon(new ImageIcon(Sobre.class.getResource("/img/github.png")));
-		btnNewButton.setBorder(null);
-		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnNewButton.setBounds(50, 179, 48, 48);
-		getContentPane().add(btnNewButton);
+		JButton btnGitHub = new JButton("");
+		btnGitHub.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				link("https://github.com/JeffSSousa");
+			}
+		});
+		btnGitHub.setBackground(SystemColor.control);
+		btnGitHub.setToolTipText("Projeto");
+		btnGitHub.setIcon(new ImageIcon(Sobre.class.getResource("/img/github.png")));
+		btnGitHub.setBorder(null);
+		btnGitHub.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGitHub.setBounds(50, 179, 48, 48);
+		getContentPane().add(btnGitHub);
 		
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setBackground(SystemColor.control);
-		btnNewButton_1.setToolTipText("LinkeIn");
-		btnNewButton_1.setIcon(new ImageIcon(Sobre.class.getResource("/img/linkedin.png")));
-		btnNewButton_1.setBorder(null);
-		btnNewButton_1.setBounds(158, 179, 48, 48);
-		getContentPane().add(btnNewButton_1);
+		JButton btnLinkedIn = new JButton("");
+		btnLinkedIn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnLinkedIn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				link("https://www.linkedin.com/in/jefferson-sousa-8b93a81a2/");
+			}
+		});
+		btnLinkedIn.setBackground(SystemColor.control);
+		btnLinkedIn.setToolTipText("LinkeIn");
+		btnLinkedIn.setIcon(new ImageIcon(Sobre.class.getResource("/img/linkedin.png")));
+		btnLinkedIn.setBorder(null);
+		btnLinkedIn.setBounds(120, 179, 48, 48);
+		getContentPane().add(btnLinkedIn);
 
 	}
+	
+	private void link(String site) {
+		Desktop desktop = Desktop.getDesktop();
+		try {
+			URI uri = new URI(site);
+			desktop.browse(uri);
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	
 
 }
