@@ -20,9 +20,6 @@ public class Sobre extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -37,9 +34,6 @@ public class Sobre extends JDialog {
 		});
 	}
 
-	/**
-	 * Create the dialog.
-	 */
 	public Sobre() {
 		setModal(true);
 		setResizable(false);
@@ -47,19 +41,19 @@ public class Sobre extends JDialog {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Sobre.class.getResource("/img/home.png")));
 		setBounds(150, 150, 450, 300);
 		getContentPane().setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("Buscar CEP - ver 1.0");
 		lblNewLabel.setBounds(50, 39, 311, 14);
 		getContentPane().add(lblNewLabel);
-		
+
 		JLabel lblautorJeffersonS = new JLabel("@Autor Jefferson S. Sousa");
 		lblautorJeffersonS.setBounds(50, 76, 311, 14);
 		getContentPane().add(lblautorJeffersonS);
-		
+
 		JLabel lblWebService = new JLabel("WEB Service:");
 		lblWebService.setBounds(50, 130, 83, 14);
 		getContentPane().add(lblWebService);
-		
+
 		JLabel lblWebServ = new JLabel("republicavirtual.com.br");
 		lblWebServ.addMouseListener(new MouseAdapter() {
 			@Override
@@ -71,7 +65,7 @@ public class Sobre extends JDialog {
 		lblWebServ.setForeground(SystemColor.textHighlight);
 		lblWebServ.setBounds(158, 130, 171, 14);
 		getContentPane().add(lblWebServ);
-		
+
 		JButton btnGitHub = new JButton("");
 		btnGitHub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -85,7 +79,7 @@ public class Sobre extends JDialog {
 		btnGitHub.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnGitHub.setBounds(50, 179, 48, 48);
 		getContentPane().add(btnGitHub);
-		
+
 		JButton btnLinkedIn = new JButton("");
 		btnLinkedIn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnLinkedIn.addActionListener(new ActionListener() {
@@ -101,17 +95,15 @@ public class Sobre extends JDialog {
 		getContentPane().add(btnLinkedIn);
 
 	}
-	
-	private void link(String site) {
+
+	private void link(String site) { // Metodo de Link de paginas web
 		Desktop desktop = Desktop.getDesktop();
 		try {
 			URI uri = new URI(site);
 			desktop.browse(uri);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
-	
-	
 
 }
