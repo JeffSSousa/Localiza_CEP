@@ -21,10 +21,10 @@ Jefferson Silva de Sousa
 - Uso de biblioteca dom4j para trabalhar com xml
 
 
-## Instruções para instalação e uso do aplicativo
+## Instruções uso do aplicativo
 
  - Ter o Java versão 17 ou superior instalado.
- - Baixe o arquivo executavel (cep.jar)
+ - Baixe o arquivo executavel (Localiza CEP.jar) no Releases.
  
 ## Bibliotecas:
 
