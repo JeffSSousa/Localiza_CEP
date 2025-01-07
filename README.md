@@ -1,7 +1,6 @@
 
 # Buscador de CEP
 
-```Status do projeto: Em desenvolvimento```
 
 ![Captura de tela 2024-12-16 171107](https://github.com/user-attachments/assets/277b3535-992d-4f52-8886-36ecf54df070)
 
@@ -31,8 +30,4 @@ Jefferson Silva de Sousa
 [atxy2k](https://atxy2k.github.io/RestrictedTextField/)
 
 [dom4j](https://dom4j.github.io/)
-
-## Lincença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais informações.
 
