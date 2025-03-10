@@ -3,8 +3,9 @@
 *.war
 *.ear
 .project
-.settings/
 
+
+/.settings/
 /bin/
 /target/
 
